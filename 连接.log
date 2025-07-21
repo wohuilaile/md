@@ -1,0 +1,58 @@
+> Spawned remote CLI: 65626
+[10:17:03.564] > Waiting for server log...
+[10:17:03.611] > 3075299e8e4d: start
+> SSH_AUTH_SOCK====
+> DISPLAY====
+> listeningOn==127.0.0.1:37987==
+> osReleaseId==ubuntu==
+> arch==x86_64==
+> vscodeArch==x64==
+> bitness==64==
+> tmpDir==/run/user/1049==
+> platform==linux==
+> unpackResult====
+> didLocalDownload==0==
+> downloadTime====
+> installTime====
+> serverStartTime==75==
+> execServerToken==a11a1111-1aaa-1a1a-1111-aa11111aa111==
+> 3075299e8e4d: end
+[10:17:03.611] Received install output: 
+SSH_AUTH_SOCK====
+DISPLAY====
+listeningOn==127.0.0.1:37987==
+osReleaseId==ubuntu==
+arch==x86_64==
+vscodeArch==x64==
+bitness==64==
+tmpDir==/run/user/1049==
+platform==linux==
+unpackResult====
+didLocalDownload==0==
+downloadTime====
+installTime====
+serverStartTime==75==
+execServerToken==a11a1111-1aaa-1a1a-1111-aa11111aa111==
+
+[10:17:03.611] Remote server is listening on port 37987
+[10:17:03.611] Parsed server configuration: {"serverConfiguration":{"remoteListeningOn":{"port":37987},"osReleaseId":"ubuntu","arch":"x86_64","sshAuthSock":"","display":"","tmpDir":"/run/user/1049","platform":"linux","execServerToken":"a11a1111-1aaa-1a1a-1111-aa11111aa111"},"serverStartTime":75,"installUnpackCode":""}
+[10:17:03.634] Starting forwarding server. local port 52377 -> socksPort 52371 -> remotePort 37987
+[10:17:03.658] Forwarding server listening on port 52377
+[10:17:03.658] Waiting for ssh tunnel to be ready
+[10:17:03.660] Tunneled port 37987 to local port 52377
+[10:17:03.660] Resolved "ssh-remote+grapymage.makerface.cn" to "port 52377"
+[10:17:03.663] Initizing new exec server for ssh-remote+grapymage.makerface.cn
+[10:17:03.663] Resolving exec server at port 52377
+[10:17:03.678] [Forwarding server port 52377] Got connection 0
+[10:17:03.681] [Forwarding server port 52377] Got connection 1
+[10:17:05.060] Exec server for ssh-remote+grapymage.makerface.cn created and cached
+[10:17:05.066] ------
+
+
+
+
+[10:17:05.580] [server] Checking /home/public/wuan23/.vscode-server/cli/servers/Stable-5437499feb04f7a586f677b155b039bc2b3669eb/log.txt and /home/public/wuan23/.vscode-server/cli/servers/Stable-5437499feb04f7a586f677b155b039bc2b3669eb/pid.txt for a running server...
+[10:17:05.580] [server] Found running server (pid=27748)
+[10:17:26.404] > client_loop: send disconnect: Connection aborted
+[10:17:27.670] "install" terminal command done
+[10:17:27.671] Install terminal quit with output: client_loop: send disconnect: Connection aborted
