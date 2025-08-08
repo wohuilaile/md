@@ -1,7 +1,7 @@
 import java.security.*;
 import java.util.Base64;
 
-public class ShortRSAKeyGen {
+public class Main {
     public static void main(String[] args) throws Exception {
         KeyPairGenerator keyGen = KeyPairGenerator.getInstance("RSA");
         keyGen.initialize(512); // 512位，短密钥
