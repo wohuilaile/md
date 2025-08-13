@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>文件上传</title>
+<style>
+  body { font-family: Arial, sans-serif; padding: 20px; max-width: 600px; margin: auto; }
+  h1 { text-align: center; }
+  label { display: block; margin-top: 20px; font-weight: bold; }
+  input[type="file"], button { width: 100%; padding: 10px; margin-top: 10px; box-sizing: border-box; }
+  progress { width: 100%; height: 20px; margin-top: 15px; }
+  #status { margin-top: 15px; font-weight: bold; }
+  @media (max-width: 480px) {
+    h1 { font-size: 1.5em; }
+    input[type="file"], button { font-size: 1em; }
+  }
+</style>
+</head>
+<body>
+<h1>文件上传</h1>
+<label for="fileInput">选择文件：</label>
+<input type="file" id="fileInput" />
+<button id="uploadBtn">上传文件</button>
+<progress id="progressBar" value="0" max="100"></progress>
+<div id="status"></div>
+<script>
+  const uploadUrl = 'http://localhost:9900/file/upload';
+
+  document.getElementById('uploadBtn').addEventListener('click', function () {
+    const fileInput = document.getElementById('fileInput');
+    if (!fileInput.files.length) {
+      alert('请选择一个文件');
+      return;
+    }
+    const file = fileInput.files[0];
+    const formData = new FormData();
+    formData.append('file', file);
+
+    const xhr = new XMLHttpRequest();
+    xhr.open('POST', uploadUrl, true);
+
+    xhr.upload.onprogress = function (e) {
+      if (e.lengthComputable) {
+        const percentComplete = (e.loaded / e.total) * 100;
+        document.getElementById('progressBar').value = percentComplete;
+      }
+    };
+
+    xhr.onload = function () {
+      if (xhr.status >= 200 && xhr.status < 300) {
+        document.getElementById('status').innerText = '上传成功！';
+      } else {
+        document.getElementById('status').innerText = '上传失败：' + xhr.statusText;
+      }
+    };
+
+    xhr.onerror = function () {
+      document.getElementById('status').innerText = '请求出错，请检查网络或接口地址';
+    };
+
+    xhr.send(formData);
+    document.getElementById('status').innerText = '正在上传...';
+  });
+</script>
+</body>
+</html>
+
+
